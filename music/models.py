@@ -11,3 +11,7 @@ class Track(models.Model):
     track = models.CharField(max_length=1000)
     #eventually a file will be uploaded for track_pic
     track_pic = models.CharField(max_length=1000)
+
+class Compilation(models.Model):
+    comp_title = models.CharField(max_length=250)
+    
