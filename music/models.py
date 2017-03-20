@@ -13,5 +13,9 @@ class Track(models.Model):
     #eventually a file will be uploaded for track_pic
     track_pic = models.CharField(max_length=1000)
 
+    def __str__(self):
+        return self.artist + " - " + self.track_title
+
 class Compilation(models.Model):
     comp_title = models.CharField(max_length=250)
+    #comp_cover = models.CharField(max_length=250)
