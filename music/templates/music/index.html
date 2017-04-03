@@ -1,7 +1,7 @@
 {% if all_tracks %}
   <ul>
     {% for track in all_tracks %}
-      <li><a href = "/music/{{ track.id }}/">{{ track.track_title }}</a></li>
+      <li><a href = "/music/{{ track.id }}/">{{ track.artist }}</a></li>
     {% endfor %}
   </ul>
 {% else %}
