@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Bio
+from .models import Artist
 
-admin.site.register(Bio)
+admin.site.register(Artist)
