@@ -16,6 +16,11 @@ class Track(models.Model):
     def __str__(self):
         return self.artist + " - " + self.track_title
 
+class Artist(models.Model):
+     artist = models.CharField(max_length=200)
+     
+     tracks = {'Track.artist' : Track.track_title}
+
 class Compilation(models.Model):
     comp_title = models.CharField(max_length=250)
     #comp_cover = models.CharField(max_length=250)
