@@ -10,3 +10,6 @@ class Artist(models.Model):
     picture = models.CharField(max_length=1500)
     #eventually a file will be uploaded for example_tracks
     tracks = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.name

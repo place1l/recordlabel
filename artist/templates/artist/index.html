@@ -1,0 +1,12 @@
+{% if all_artists %}
+
+<a href = '/'>Home</a>
+
+  <ul>
+    {% for artist in all_artists %}
+      <li><a href = "/artist/{{artist.id}}/">{{ artist.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <h3> There are currently no artists. </h3>
+{% endif %}

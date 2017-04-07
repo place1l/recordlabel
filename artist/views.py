@@ -1,4 +1,15 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
+from django.shortcuts import render
+from .models import Artist
+
 
 def index(request):
-    return HttpResponse("<h1>ARTIST HOMEPAGE</h1>")
+    all_artists = Artist.objects.all()
+    return render(request, 'artist/index.html', {'all_artists' : all_artists})
+
+def artist(request, artist_id):
+    try:
+        artist = Artist.objects.get(pk = artist_id)
+    except Artist.DoesNotExist:
+        raise Http404("Artist Not Found")
+    return render(request, 'artist/artist.html', {'artist' : artist})
